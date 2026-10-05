@@ -13,7 +13,7 @@ export const profile = {
   githubUsername: "Mdsaddam0786",
   siteUrl: process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
   resume: "/resume.pdf",
-  photo: "/images/saddam-cutout.webp",
+  photo: "/images/saddam-hd.webp",
   photoFull: "/images/saddam.webp",
   tagline:
     "I build scalable, production-grade web apps — from pixel-perfect frontends to fast, reliable APIs.",

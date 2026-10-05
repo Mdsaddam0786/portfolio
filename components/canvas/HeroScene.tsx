@@ -8,7 +8,7 @@ import * as THREE from "three";
 import { useIsMobile, useReducedMotion } from "@/lib/hooks";
 import { EnergyOrb } from "./EnergyOrb";
 import { OrbitRing } from "./OrbitRing";
-import { Portrait } from "./Portrait";
+import { PixelPortrait } from "./PixelPortrait";
 
 const CYAN: [number, number, number] = [0.4, 2.6, 3];
 const VIOLET: [number, number, number] = [1.8, 1.1, 3];
@@ -81,7 +81,7 @@ export default function HeroScene() {
         <Parallax depth={0.1 * depth}>
           <Suspense fallback={null}>
             <group position={[0, -0.35, 0.3]}>
-              <Portrait height={3.75} />
+              <PixelPortrait height={3.75} columns={mobile ? 150 : 250} animate={animate} />
             </group>
           </Suspense>
         </Parallax>
