@@ -4,6 +4,10 @@ import { Typewriter } from "@/components/ui/Typewriter";
 import { profile } from "@/data/profile";
 import { socials } from "@/data/socials";
 import { HeroCanvas } from "./HeroCanvas";
+import { HeroStatChip } from "./HeroStatChip";
+
+const experience = profile.stats[0];
+const rank = profile.stats[3];
 
 export function Hero() {
   return (
@@ -75,8 +79,22 @@ export function Hero() {
           </ul>
         </div>
 
-        <div className="order-1 h-[52svh] min-h-[340px] min-w-0 [mask-image:radial-gradient(closest-side,black_72%,transparent)] lg:order-2 lg:h-[78svh]">
-          <HeroCanvas />
+        <div className="relative order-1 h-[52svh] min-h-[340px] min-w-0 lg:order-2 lg:h-[78svh]">
+          <div className="h-full w-full [mask-image:radial-gradient(closest-side,black_80%,transparent)]">
+            <HeroCanvas />
+          </div>
+          <HeroStatChip
+            value={`${experience.value}+ yrs`}
+            label="Experience"
+            className="bottom-[24%] left-[2%]"
+            delay={0.2}
+          />
+          <HeroStatChip
+            value={`#${rank.value} Global`}
+            label="CodeChef Rank"
+            className="top-[24%] right-[0%]"
+            delay={0.9}
+          />
         </div>
       </div>
 
