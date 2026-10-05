@@ -43,3 +43,6 @@ next-env.d.ts
 # original source assets (optimized copies live in /public)
 /Assests
 !.env.example
+
+.vercel
+.env*
