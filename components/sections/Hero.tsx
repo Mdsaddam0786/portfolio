@@ -29,7 +29,7 @@ export function Hero() {
         className="bg-accent/15 absolute right-0 bottom-0 h-96 w-96 rounded-full blur-[120px]"
       />
 
-      <div className="relative mx-auto grid w-full max-w-6xl grid-cols-1 items-center gap-8 px-4 md:px-6 lg:grid-cols-2">
+      <div className="relative mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-4 px-4 md:px-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.15fr)]">
         <div className="order-2 min-w-0 text-center lg:order-1 lg:text-left">
           <p className="glass text-muted inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-sm">
             <span className="relative flex h-2 w-2">
@@ -79,7 +79,7 @@ export function Hero() {
           </ul>
         </div>
 
-        <div className="relative order-1 h-[52svh] min-h-[340px] min-w-0 lg:order-2 lg:h-[78svh]">
+        <div className="relative order-1 h-[60svh] min-h-[400px] min-w-0 lg:order-2 lg:h-[88svh]">
           <div className="h-full w-full [mask-image:radial-gradient(closest-side,black_80%,transparent)]">
             <HeroCanvas />
           </div>
