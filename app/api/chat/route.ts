@@ -5,6 +5,7 @@ import {
   toUIMessageStream,
   type UIMessage,
 } from "ai";
+import { google, type GoogleLanguageModelOptions } from "@ai-sdk/google";
 import { buildSystemPrompt } from "@/lib/chat-context";
 import { rateLimit } from "@/lib/rate-limit";
 
@@ -34,12 +35,16 @@ export async function POST(req: Request) {
   );
   if (tooLong) return new Response("Message too long", { status: 413 });
 
+  // Gemini free tier via GOOGLE_GENERATIVE_AI_API_KEY (no card needed, unlike AI Gateway).
   const result = streamText({
-    model: "anthropic/claude-haiku-4.5",
+    model: google("gemini-flash-lite-latest"),
     system: buildSystemPrompt(),
     messages: await convertToModelMessages(recent),
     maxOutputTokens: 400,
     temperature: 0.4,
+    providerOptions: {
+      google: { thinkingConfig: { thinkingLevel: "minimal" } } satisfies GoogleLanguageModelOptions,
+    },
   });
 
   return createUIMessageStreamResponse({

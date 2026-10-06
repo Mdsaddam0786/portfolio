@@ -6,7 +6,7 @@ A dark neon 3D portfolio built with Next.js 16, React Three Fiber, Tailwind CSS 
 
 - **3D hero**: photo on a floating glass card with neon rings, starfield, sparkles and bloom. Tilts with the mouse.
 - **Sections**: About, Skills (draggable 3D icon sphere), Projects (filter, tilt cards, detail modal), Experience timeline, live GitHub activity, Certificates, Contact.
-- **"Ask about me" AI chatbot**: Vercel AI SDK + AI Gateway. Answers only from the files in `data/`.
+- **"Ask about me" AI chatbot**: Vercel AI SDK + Google Gemini (free tier). Answers only from the files in `data/`.
 - **Contact form**: React Hook Form + Zod, sent by a Server Action through Resend. Includes a honeypot and rate limiting.
 - **Polish**: asset loader, custom cursor, Lenis smooth scroll, Vercel Analytics and Speed Insights.
 - **Good practices**:
@@ -25,14 +25,14 @@ npm run dev                  # http://localhost:3000
 
 Every integration is optional locally. Without its key, each one falls back gracefully:
 
-| Variable               | Used for                                     |
-| ---------------------- | -------------------------------------------- |
-| `NEXT_PUBLIC_SITE_URL` | Canonical URL, sitemap, OG tags              |
-| `RESEND_API_KEY`       | Contact form email                           |
-| `CONTACT_TO_EMAIL`     | Inbox that receives messages                 |
-| `CONTACT_FROM_EMAIL`   | Sender (must be a verified Resend domain)    |
-| `AI_GATEWAY_API_KEY`   | Chatbot (not needed on Vercel — uses OIDC)   |
-| `GITHUB_TOKEN`         | Contribution graph + higher GitHub API limit |
+| Variable                       | Used for                                     |
+| ------------------------------ | -------------------------------------------- |
+| `NEXT_PUBLIC_SITE_URL`         | Canonical URL, sitemap, OG tags              |
+| `RESEND_API_KEY`               | Contact form email                           |
+| `CONTACT_TO_EMAIL`             | Inbox that receives messages                 |
+| `CONTACT_FROM_EMAIL`           | Sender (must be a verified Resend domain)    |
+| `GOOGLE_GENERATIVE_AI_API_KEY` | Chatbot (free key from Google AI Studio)     |
+| `GITHUB_TOKEN`                 | Contribution graph + higher GitHub API limit |
 
 ## Updating content
 
